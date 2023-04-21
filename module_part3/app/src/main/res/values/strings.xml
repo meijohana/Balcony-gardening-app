@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">module_part3</string>
+    <string-array name="list_items">
+        <item>paprika</item>
+        <item>tomato</item>
+        <item>chili</item>
+    </string-array>
+    <string-array name="descriptions">
+        <item>Making fruits</item>
+        <item>Seedling</item>
+        <item>Growing sappling</item>
+    </string-array>
+    <string-array name="prices">
+        <item>2e</item>
+        <item>1e</item>
+        <item>3e</item>
+    </string-array>
+</resources>
