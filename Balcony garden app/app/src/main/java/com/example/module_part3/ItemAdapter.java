@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,6 +34,11 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         holder.stateText.setText(plantData.getState());
         holder.priceText.setText(plantData.getPrice());
 
+        if (pData.get(position).getState() == "Making fruit")
+        holder.plantIcon.setImageResource(R.drawable.grown);
+        if (pData.get(position).getState() == "Sappling")
+            holder.plantIcon.setImageResource(R.drawable.sappling);
+
     }
 
     public ItemAdapter(Context c, List<PlantData> pData){
@@ -54,6 +60,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         TextView nameText;
         TextView stateText;
         TextView priceText;
+        ImageView plantIcon;
 
         public ViewHolder(@NonNull View itemview) {
             super(itemview);
@@ -61,14 +68,15 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             nameText = itemview.findViewById(R.id.nameField);
             stateText = itemview.findViewById(R.id.descriptionField);
             priceText = itemview.findViewById(R.id.priceField);
-            itemview.setOnClickListener((View.OnClickListener) this);
+            plantIcon = itemview.findViewById(R.id.plantIcon);
+            //itemview.setOnClickListener((View.OnClickListener) this);
 
         }
 
-        public void onClick(View view) {
+        /*public void onClick(View view) {
             int position = (int) view.getTag();
             imageView.setImageResource(pData.get(position).getImageResourceId());
-        }
+        }*/
 
     }
 

@@ -4,10 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     tools:context=".MainActivity">
 
-
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/plantIcon"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:src="@drawable/seedling"
+        android:visibility="invisible"
+        android:layout_margin="10sp"
+        >
+    </androidx.appcompat.widget.AppCompatImageView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10sp">
     <TextView
         android:id="@+id/nameField"
         android:layout_width="wrap_content"
@@ -15,10 +28,6 @@
         android:text="Plants"
         android:textSize="20sp"
         />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
         <TextView
             android:id="@+id/descriptionField"
             android:layout_width="wrap_content"
@@ -27,12 +36,6 @@
             android:layout_gravity="start"
             android:text="Plant status"
             android:textSize="16sp" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10sp"
-        android:orientation="vertical">
         <TextView
             android:id="@+id/priceField"
             android:layout_width="wrap_content"
