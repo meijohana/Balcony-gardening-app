@@ -10,19 +10,27 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.android.material.appbar.MaterialToolbar;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView myListView;
+    MaterialToolbar topAppBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Setting the default layout and menu
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        topAppBar = findViewById(R.id.appbar);
 
-        Resources res = getResources();
+        //topAppBar.setNavigationOnClickListener();
+
+        //Resources res = getResources();
+        // Creating the list of plants and the adapter to show items
         myListView = findViewById(R.id.listView);
 
         List<PlantData> plantList = new ArrayList<>();
