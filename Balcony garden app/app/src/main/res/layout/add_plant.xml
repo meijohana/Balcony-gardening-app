@@ -1,6 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/saveNameButton"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:divider="@drawable/space_divider"
+    android:orientation="vertical"
+    android:showDividers="middle">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/plantName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Plant name"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/plantStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Growth status"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioButton
+            android:id="@+id/seedlingButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seedling" />
+
+        <RadioButton
+            android:id="@+id/sapplingButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sappling" />
+
+        <RadioButton
+            android:id="@+id/grownButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Making fruit" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/plantWatering"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Watering frequency"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioButton
+            android:id="@+id/waterRare"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Less than once a week" />
+
+        <RadioButton
+            android:id="@+id/waterOften"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A few times a week" />
+
+        <RadioButton
+            android:id="@+id/waterDrops"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Needs constant moisture" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save" />
+</LinearLayout>
