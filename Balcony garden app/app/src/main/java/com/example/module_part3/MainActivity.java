@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
         /*** Example plants for quick testing!
         plantList.add(new PlantData("Paprika", "Making fruit", "Water often"));
-        plantList.add(new PlantData("Tomato", "Seedling", "Water few times a week"));
-        plantList.add(new PlantData("Chili", "Sappling", "Water few times a week"));*/
+        plantList.add(new PlantData("Tomato", "Seedling", "Water a few times a week"));
+        plantList.add(new PlantData("Chili", "Sappling", "Water a few times a week"));*/
 
         ItemAdapter itemAdapter = new ItemAdapter(this, plantList);
         myListView.setLayoutManager(new LinearLayoutManager(this));

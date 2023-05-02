@@ -9,12 +9,28 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AddPlant extends AppCompatActivity{
     Button addButton;
+    EditText editName;
+    RadioGroup status;
+    RadioGroup watering;
+
+    RadioButton statusButton;
+    RadioButton waterButton;
+
+
+    PlantData addNew;
+
+    String plantName;
+    String plantStatus;
+    String plantWatering;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +40,10 @@ public class AddPlant extends AppCompatActivity{
         getSupportActionBar().setTitle("Balcony garden");
 
         addButton = findViewById(R.id.saveButton);
+        editName = findViewById(R.id.plantName);
+        status = findViewById(R.id.plantStatus);
+        watering = findViewById(R.id.plantWatering);
+
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,10 +53,30 @@ public class AddPlant extends AppCompatActivity{
 
     }
 
+    // Add information to a new Plantdata item and add it to the list
     public void addPlant() {
         List<PlantData> plantList = MainActivity.plantList;
-        //plantList.add(new PlantData("Onion", "Sappling", "Water few times a week"));
+        plantName = editName.getText().toString();
 
+        int statusId = status.getCheckedRadioButtonId();
+        statusButton = findViewById(statusId);
+        plantStatus = statusButton.getText().toString();
+
+        int waterId = watering.getCheckedRadioButtonId();
+        waterButton = findViewById(waterId);
+        plantWatering = waterButton.getText().toString();
+
+        addNew = new PlantData(plantName, plantStatus, plantWatering);
+        plantList.add(addNew);
+
+
+    }
+    public void checkButton(View view){
+        int statusId = status.getCheckedRadioButtonId();
+        int waterId = watering.getCheckedRadioButtonId();
+
+        statusButton = findViewById(statusId);
+        waterButton = findViewById(waterId);
     }
 
     public boolean onCreateOptionsMenu(Menu menu){
