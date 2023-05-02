@@ -32,7 +32,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         PlantData plantData = pData.get(position);
         holder.nameText.setText(plantData.getName());
         holder.stateText.setText(plantData.getState());
-        holder.priceText.setText(plantData.getPrice());
+        holder.priceText.setText(plantData.getWater());
 
         if (pData.get(position).getState() == "Making fruit")
         holder.plantIcon.setImageResource(R.drawable.grown);

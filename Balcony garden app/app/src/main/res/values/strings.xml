@@ -1,20 +1,20 @@
 <resources>
     <string name="app_name">module_part3</string>
-    <string-array name="list_items">
-        <item>paprika</item>
-        <item>tomato</item>
-        <item>chili</item>
+    <string name="infodump">This is a gardening app where you can keep a list of plants you are growing for example in your balcony. The app allows you to add plant information to the list.</string>
+    <string name="infodump2">Editing information</string>
+    <string-array name="Paprika">
+        <item>Paprika</item>
+        <item>Making fruit</item>
+        <item>Water often</item>
     </string-array>
-    <string-array name="descriptions">
-        <item>Making fruits</item>
+    <string-array name="Tomato">
+        <item>Tomato</item>
         <item>Seedling</item>
-        <item>Growing sappling</item>
+        <item>Water few times a week</item>
     </string-array>
-    <string-array name="prices">
-        <item>2e</item>
-        <item>1e</item>
-        <item>3e</item>
+    <string-array name="Chili">
+        <item>Chili</item>
+        <item>Sappling</item>
+        <item>Water few times a week</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

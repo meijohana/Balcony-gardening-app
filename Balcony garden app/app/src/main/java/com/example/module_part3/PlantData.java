@@ -3,12 +3,12 @@ package com.example.module_part3;
 public class PlantData {
     private String name;
     private String state;
-    private String price;
+    private String water;
 
-    public PlantData(String name, String state, String price) {
+    public PlantData(String name, String state, String water) {
         this.name = name;
         this.state = state;
-        this.price = price;
+        this.water = water;
     }
 
     public void setName(String name) {
@@ -19,8 +19,8 @@ public class PlantData {
         this.state = state;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setWater(String water) {
+        this.water = water;
     }
 
     public String getName() {
@@ -31,7 +31,7 @@ public class PlantData {
         return state;
     }
 
-    public String getPrice() {
-        return price;
+    public String getWater() {
+        return water;
     }
 }

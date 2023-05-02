@@ -3,15 +3,12 @@ package com.example.module_part3;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainerView;
-import androidx.navigation.NavController;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ClipData;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -30,9 +27,10 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView myListView;
-    Toolbar topAppBar;
-    BottomAppBar bottomBar;
 
+    public static List<PlantData> plantList = new ArrayList<>();
+
+    Toolbar topAppBar;
     FragmentContainerView navController;
     ClipData.Item addPlant;
     ClipData.Item myPlants;
@@ -46,22 +44,23 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Balcony garden");
 
 
-        //Resources res = getResources();
         // Creating the list of plants and the adapter to show items
         myListView = findViewById(R.id.listView);
 
-        List<PlantData> plantList = new ArrayList<>();
-
-        plantList.add(new PlantData("Paprika", "Making fruit", "2e"));
-        plantList.add(new PlantData("Tomato", "Seedling", "1e"));
-        plantList.add(new PlantData("Chili", "Sappling", "3e"));
+        /*** Example plants for quick testing!
+        plantList.add(new PlantData("Paprika", "Making fruit", "Water often"));
+        plantList.add(new PlantData("Tomato", "Seedling", "Water few times a week"));
+        plantList.add(new PlantData("Chili", "Sappling", "Water few times a week"));*/
 
         ItemAdapter itemAdapter = new ItemAdapter(this, plantList);
         myListView.setLayoutManager(new LinearLayoutManager(this));
         myListView.setAdapter(itemAdapter);
 
     }
+
+        // Handling menu navigation
     public boolean onCreateOptionsMenu(Menu menu){
+
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
 
@@ -75,10 +74,11 @@ public class MainActivity extends AppCompatActivity {
 
         MenuItem item3 = menu.findItem(R.id.info);
         Intent intent3 = new Intent(this, Info.class);
-        item2.setIntent(intent2);
+        item3.setIntent(intent3);
 
         return true;
     }
+
 
 
 }

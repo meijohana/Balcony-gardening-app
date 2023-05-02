@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/saveNameButton"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:divider="@drawable/space_divider"
@@ -17,7 +16,8 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:text="Plant name">
 
 
     </EditText>
@@ -72,20 +72,20 @@
             android:text="Less than once a week" />
 
         <RadioButton
-            android:id="@+id/waterOften"
+            android:id="@+id/waterMid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="A few times a week" />
 
         <RadioButton
-            android:id="@+id/waterDrops"
+            android:id="@+id/waterOften"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Needs constant moisture" />
     </RadioGroup>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save" />
