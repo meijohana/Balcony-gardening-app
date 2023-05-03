@@ -32,13 +32,19 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         PlantData plantData = pData.get(position);
         holder.nameText.setText(plantData.getName());
         holder.stateText.setText(plantData.getState());
-        holder.priceText.setText(plantData.getWater());
+        holder.waterText.setText(plantData.getWater());
 
-        if (pData.get(position).getState() == "Making fruit")
-        holder.plantIcon.setImageResource(R.drawable.grown);
-        if (pData.get(position).getState() == "Sappling")
-            holder.plantIcon.setImageResource(R.drawable.sappling);
-
+        switch (plantData.getState()) {
+            case "Making fruit":
+                holder.plantIcon.setImageResource(R.drawable.grown);
+                break;
+            case "Sappling":
+                holder.plantIcon.setImageResource(R.drawable.sappling);
+                break;
+            default:
+                holder.plantIcon.setImageResource(R.drawable.seedling);
+                break;
+        }
     }
 
     public ItemAdapter(Context c, List<PlantData> pData){
@@ -59,7 +65,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView nameText;
         TextView stateText;
-        TextView priceText;
+        TextView waterText;
         ImageView plantIcon;
 
         public ViewHolder(@NonNull View itemview) {
@@ -67,16 +73,10 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
             nameText = itemview.findViewById(R.id.nameField);
             stateText = itemview.findViewById(R.id.descriptionField);
-            priceText = itemview.findViewById(R.id.priceField);
+            waterText = itemview.findViewById(R.id.priceField);
             plantIcon = itemview.findViewById(R.id.plantIcon);
-            //itemview.setOnClickListener((View.OnClickListener) this);
 
         }
-
-        /*public void onClick(View view) {
-            int position = (int) view.getTag();
-            imageView.setImageResource(pData.get(position).getImageResourceId());
-        }*/
 
     }
 

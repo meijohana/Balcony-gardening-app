@@ -3,21 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:divider="@drawable/space_divider"
+    android:layout_margin="16sp"
     android:orientation="vertical"
     android:showDividers="middle">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:text="Plant name"
-        android:textColor="@color/black"
         android:textSize="16sp" />
 
     <EditText
         android:id="@+id/plantName"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Plant name">
+        android:layout_height="50sp"
+        android:textAlignment="center"
+        android:background="@android:drawable/editbox_dropdown_light_frame"
+        android:backgroundTint="#C8E6C9"
+        android:text="Enter name">
 
 
     </EditText>
@@ -26,13 +30,14 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:text="Growth status"
-        android:textColor="@color/black"
         android:textSize="16sp" />
 
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginStart="60sp"
         android:id="@+id/plantStatus">
 
         <RadioButton
@@ -60,14 +65,15 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:text="Watering frequency"
-        android:textColor="@color/black"
         android:textSize="16sp" />
 
     <RadioGroup
         android:id="@+id/plantWatering"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginStart="60sp">
 
         <RadioButton
             android:id="@+id/waterRare"
@@ -95,5 +101,6 @@
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="Save" />
 </LinearLayout>
