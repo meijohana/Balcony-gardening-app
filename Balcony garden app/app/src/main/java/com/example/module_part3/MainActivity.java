@@ -1,13 +1,8 @@
 package com.example.module_part3;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.FragmentContainerView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,9 +12,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-
-import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.bottomappbar.BottomAppBar;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,14 +20,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView myListView;
+    TextView emptyText;
 
     public static List<PlantData> plantList = new ArrayList<>();
-
-    Toolbar topAppBar;
-    FragmentContainerView navController;
-    ClipData.Item addPlant;
-    ClipData.Item myPlants;
-    ClipData.Item info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Creating the list of plants and the adapter to show items
         myListView = findViewById(R.id.listView);
+        emptyText = findViewById(R.id.emptyText);
 
         /*** Example plants for quick testing!
         plantList.add(new PlantData("Paprika", "Making fruit", "Water often"));
@@ -56,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
         myListView.setLayoutManager(new LinearLayoutManager(this));
         myListView.setAdapter(itemAdapter);
 
+        if (!plantList.isEmpty()) {
+            emptyText.setVisibility(View.INVISIBLE);
+        }
     }
 
         // Handling menu navigation

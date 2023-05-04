@@ -68,6 +68,8 @@ public class AddPlant extends AppCompatActivity{
 
         addNew = new PlantData(plantName, plantStatus, plantWatering);
         plantList.add(addNew);
+        AddDialogFragment addDialog = new AddDialogFragment();
+        addDialog.show(getSupportFragmentManager(), "Plant added");
 
 
     }

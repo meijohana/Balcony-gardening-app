@@ -6,9 +6,10 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatDialogFragment;
 import androidx.fragment.app.DialogFragment;
 
-public class DeleteDialogFragment extends DialogFragment {
+public class DeleteDialogFragment extends AppCompatDialogFragment {
 
     private OnDeleteDialogListener listener;
 
