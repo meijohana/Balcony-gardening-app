@@ -2,11 +2,14 @@ package com.example.module_part3;
 
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import androidx.annotation.NonNull;
@@ -17,7 +20,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
 
     Context c ;
-    List<PlantData> pData;
+    static List<PlantData> pData;
+
+    private static FragmentManager fragmentManager;
 
 
     @NonNull
@@ -47,9 +52,10 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         }
     }
 
-    public ItemAdapter(Context c, List<PlantData> pData){
+    public ItemAdapter(Context c, List<PlantData> pData, FragmentManager fragmentManager){
         this.c = c;
         this.pData = pData;
+        this.fragmentManager = fragmentManager;
     }
 
     @Override
@@ -62,7 +68,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         return pData.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, DeleteDialogFragment.OnDeleteDialogListener {
         TextView nameText;
         TextView stateText;
         TextView waterText;
@@ -76,7 +82,25 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             waterText = itemview.findViewById(R.id.priceField);
             plantIcon = itemview.findViewById(R.id.plantIcon);
 
+            itemview.setOnClickListener((View.OnClickListener) this);
+
         }
+
+        @Override
+        public void onClick(View view) {
+            DeleteDialogFragment alert = new DeleteDialogFragment();
+            alert.setOnDeleteDialogListener(ViewHolder.this);
+            alert.show(fragmentManager, "Plant delete");
+        }
+
+        public void onConfirmDelete() {
+            PlantData plantData = pData.get(getAdapterPosition());
+            pData.remove(plantData);
+            notifyItemRemoved(getAdapterPosition());
+            notifyItemRangeChanged(getAdapterPosition(), pData.size()-getAdapterPosition());
+
+        }
+
 
     }
 

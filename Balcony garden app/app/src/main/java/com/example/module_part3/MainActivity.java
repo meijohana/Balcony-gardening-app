@@ -41,9 +41,10 @@ public class MainActivity extends AppCompatActivity {
         plantList.add(new PlantData("Tomato", "Seedling", "Water a few times a week"));
         plantList.add(new PlantData("Chili", "Sappling", "Water a few times a week"));*/
 
-        ItemAdapter itemAdapter = new ItemAdapter(this, plantList);
+        ItemAdapter itemAdapter = new ItemAdapter(this, plantList, getSupportFragmentManager());
         myListView.setLayoutManager(new LinearLayoutManager(this));
         myListView.setAdapter(itemAdapter);
+
 
         if (!plantList.isEmpty()) {
             emptyText.setVisibility(View.INVISIBLE);

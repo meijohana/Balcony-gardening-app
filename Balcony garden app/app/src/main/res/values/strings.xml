@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Balcony gardening</string>
     <string name="infodump">This is a gardening app where you can keep a list of plants you are growing for example in your balcony. You can navigate it from the top app bar menu.</string>
-    <string name="infodump2">This app allows you to add plant information to the list from Add plant page. A custom icon is set for the plant item based on its growth stage.</string>
-    <string name="infodump3">It supports both light and dark themes for devices, having defined separate color themes.</string>
+    <string name="infodump2">This app allows you to add plant information to the list from Add plant page. A custom icon is set for the plant item based on its growth stage. You can delete items from the list by clicking on them.</string>
+    <string name="infodump3">The app supports both light and dark themes for devices.</string>
     <string-array name="Paprika">
         <item>Paprika</item>
         <item>Making fruit</item>
