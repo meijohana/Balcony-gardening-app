@@ -1,4 +1,4 @@
-# mobile_course
+# Balcony gardening
 
 A simple balcony gardening app made for Software Development: Mobile course. The goal was to make a simple Android app independently.
 
